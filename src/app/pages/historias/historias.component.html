@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button [routerLink]="['/historia', 'nuevo' ]" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                    <i class="fa fa-plus"></i> Crear Cita
+                  </button>
+                </div>
+
+                <!-- <h3 class="card-title">Citas ( <small>4</small> )</h3> -->
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>fechareg</th>
+                            <th>motivo</th>
+                            <th>paciente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let historia of historias">
+                            <td>{{ historia.fechareg | date:'d/M/y, h:mm a' }}</td>
+                            <td>{{ historia.motivo }}</td>
+                            <td>{{ paciente._id }}</td>
+                            <td>
+                                <button [routerLink]="[ '/historia', historia._id ]" class="btn btn-primary">
+                                <i class="fa fa-edit"></i>
+                              </button>
+
+                                <!-- <button (click)="borrarMedico( medico )" class="btn btn-dasnger">
+                                <i class="fa fa-trash-o"></i>
+                              </button> -->
+
+
+                                <!-- <button (click)="borrarMedico( medico ) " class="btn btn-dasnger ">
+                                <i class="fa fa-trash-o "></i>
+                              </button> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <a routerLink="/pacientes" class=" btn btn-inverse waves-effect waves-light ">Volver</a>
+
+            </div>
+        </div>
+    </div>
+</div>

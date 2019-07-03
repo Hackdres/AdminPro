@@ -1,0 +1,131 @@
+<div class="row animated fadeIn">
+    <div class="col-md-12">
+        <div class="card card-body">
+            <h3 class="box-title mb-3">Paciente: {{ paciente.nombre }}</h3>
+            <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarPaciente(f)">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Nombre del Paciente</label>
+                            <input [(ngModel)]="paciente.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del paciente" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Tipo Documento</label>
+                            <select [(ngModel)]="paciente.tipodocumento" name="tipodocumento" class="form-control custom-select" required>
+                              <option value="">Seleccione un tipo</option>
+                              <option value="Cédula de Ciudadania">Cédula de Ciudadania</option>
+                              <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+                              <option value="Registro Civil">Registro Civil</option>
+                              <option value="Pasaporte">Pasaporte</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Documento</label>
+                            <input [(ngModel)]="paciente.documento" name="documento" type="text" class="form-control" placeholder="Documento de Identidad" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Genero</label>
+                            <div class="form-check">
+                                <label class="custom-control custom-radio">
+                                  <input  [(ngModel)]="paciente.genero" id="genero1" name="genero" value="Hombre" type="radio" checked="" class="custom-control-input">
+                                  <span class="custom-control-indicator"></span>
+                                  <span class="custom-control-description">Hombre</span>
+                                </label>
+                                <label class="custom-control custom-radio">
+                                  <input  [(ngModel)]="paciente.genero" id="genero2" name="genero" value="Mujer" type="radio" class="custom-control-input">
+                                  <span class="custom-control-indicator"></span>
+                                  <span class="custom-control-description">Mujer</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Default Material Date Picker</label>
+                            <!-- <input [(ngModel)]="paciente.nacimiento" name="nacimiento" type="datetime-local" class="form-control"> -->
+
+                            <input [(ngModel)]="paciente.nacimiento" name="nacimiento" type="text" class="form-control mydatepicker" placeholder="mm/dd/yyyy">
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="control-label">Edad</label>
+                            <input [(ngModel)]="paciente.edad" name="edad" type="number" class="form-control" placeholder="Edad">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Entidad</label>
+                            <select [(ngModel)]="paciente.entidad" name="entidad" class="form-control" required>
+                          <!-- <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="paciente.entidad" name="entidad" class="form-control" required> -->
+                          <!-- <option *ngFor="let hospital of hospitales" [value]="hospital._id"> {{ hospital.nombre }} </option> -->
+                          <option value="">Seleccione una Entidad</option>
+                          <option value="UIS Salud">UIS Salud</option>
+                          <option value="Colmédica">Colmédica</option>
+                          <option value="Colpatria">Colpatria</option>
+                          <option value="Colsanitas">Colsanitas</option>
+                          <option value="Sura">Sura</option>
+                          <option value="Medisanitas">Medisanitas</option>
+                          <option value="PAC EPS Sanitas">PAC EPS Sanitas</option>
+                          <option value="PAC Famisanar">PAC Famisanar</option>
+                          <option value="PAC Nueva EPS">PAC Nueva EPS</option>
+                          <option value="PAC EPS Sura">PAC EPS Sura</option>
+                          <option value="Particular">Particular</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="form-group">
+                            <label>Dirección</label>
+                            <input [(ngModel)]="paciente.direccion" name="direccion" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Barrio</label>
+                            <input [(ngModel)]="paciente.barrio" name="barrio" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Telefono</label>
+                            <input [(ngModel)]="paciente.telefono" name="telefono" type="number" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Celular</label>
+                            <input [(ngModel)]="paciente.telefono2" name="telefono2" type="number" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-save"></i> Guardar</button>
+                <a routerLink="/pacientes" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+
+            </form>
+        </div>
+    </div>
+</div>

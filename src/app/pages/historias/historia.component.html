@@ -1,0 +1,167 @@
+<div class="row animated fadeIn">
+    <div class="col-md-12">
+        <div class="card card-body">
+            <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarHistoria(f)">
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <h3 class="box-title">Paciente: {{ paciente.nombre }} </h3>
+                            <h3 class="box-title">Profesional: {{ medico }} </h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <h3 class="box-title">Entidad: {{ paciente.entidad }} </h3>
+                            <h3 class="box-title">Fecha: {{ fecha | date:'d/M/y, h:mm a' }}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <h3 class="box-title">Motivo de Consulta</h3>
+                            <textarea name="motivo" rows="4" cols="50" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <h3 class="box-title">Enfermedad Actual</h3>
+                            <textarea name="enfermedad" rows="4" cols="50" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <h3 class="box-title mb-3">Revisión por Sistemas</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+
+                            <label>Digestivo</label>
+                            <input name="digestivo" type="text" class="form-control" placeholder="">
+                            <label>Cardiaco</label>
+                            <input name="cardio" type="text" class="form-control" placeholder="">
+                            <label>Respiratorio</label>
+                            <input name="respira" type="text" class="form-control" placeholder="">
+                            <label>Osteomuscular</label>
+                            <input name="musculo" type="text" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Revisión por Otros Sistemas</label>
+                            <input name="otrosistem" type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Endocrino</label>
+                            <input name="endocrino" type="text" class="form-control" placeholder="">
+                            <label>Neuro-Psiquiatrico</label>
+                            <input name="neuro" type="text" class="form-control" placeholder="">
+                            <label>Urinario</label>
+                            <input name="urinario" type="text" class="form-control" placeholder="">
+                            <label>Hematológico</label>
+                            <input name="hemato" type="text" class="form-control" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="card-title">Antecedentes</h3>
+
+
+
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="card-title">Exámen Físico</h3>
+
+
+
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="card-title">Condiciones Generales o Descripción General</h3>
+
+
+
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <h3 class="box-title">Análisis</h3>
+                            <textarea name="analisis" rows="4" cols="50" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <h3 class="box-title">Impresión Diagnóstica Código CIE 10</h3>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Entidad</label>
+                            <select name="entidad" class="form-control" required>
+                                <!-- <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="paciente.entidad" name="entidad" class="form-control" required> -->
+                                <!-- <option *ngFor="let hospital of hospitales" [value]="hospital._id"> {{ hospital.nombre }} </option> -->
+                                <option value="">Seleccione una Entidad</option>
+                                <option value="UIS Salud">UIS Salud</option>
+                                <option value="Colmédica">Colmédica</option>
+                                <option value="Colpatria">Colpatria</option>
+                                <option value="Colsanitas">Colsanitas</option>
+                                <option value="Sura">Sura</option>
+                                <option value="Medisanitas">Medisanitas</option>
+                                <option value="PAC EPS Sanitas">PAC EPS Sanitas</option>
+                                <option value="PAC Famisanar">PAC Famisanar</option>
+                                <option value="PAC Nueva EPS">PAC Nueva EPS</option>
+                                <option value="PAC EPS Sura">PAC EPS Sura</option>
+                                <option value="Particular">Particular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br>
+
+                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10"><i class="fa fa-save"></i> Guardar</button>
+                <a routerLink="/historias/paciente._id" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <a href="javascript:history.go(-1)" class=" btn btn-inverse waves-effect waves-light">Atrás</a> -->
